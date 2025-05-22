@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
 import { CommonModule, NgClass } from '@angular/common';
 
 interface ExperienceTab {
@@ -177,9 +177,14 @@ interface ExperienceTab {
           aria-hidden="true"
           [ngClass]="{ hidden: !openModal }"
           class="fixed top-0 left-0 right-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50 overflow-y-auto overflow-x-hidden"
+          (click)="hideModal()"
         >
-          <div class="relative p-4 w-full max-w-2xl max-h-full">
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <div
+            #modalContent
+            class="relative p-4 w-full max-w-5xl max-h-[90vh]"
+            (click)="$event.stopPropagation()"
+          >
+            <div class="relative bg-white rounded-lg shadow-xl dark:bg-gray-800">
               <button
                 type="button"
                 (click)="hideModal()"
@@ -203,66 +208,130 @@ interface ExperienceTab {
                   />
                 </svg>
               </button>
-              <div class="p-6">
+              <div class="p-8 overflow-y-auto max-h-[calc(90vh-6rem)]">
                 <ng-container [ngSwitch]="openModal">
                   <ng-container *ngSwitchCase="'hddc'">
-                    <h3 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">
-                      Home Depot Design Center
+                    <h3 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+                      Home Depot Design Center - Interactive Booking Platform
                     </h3>
                     <img
                       src="img/portfolio/hddc.png"
                       alt="Home Depot Design Center"
-                      class="h-full object-cover rounded mb-4"
+                      class="h-full object-cover rounded-lg mb-6 shadow-md"
                     />
-                    <p>
-                      Interactive booking platform for the new Home Depot Design Center store,
-                      featuring a design preferences selection process. I led frontend development,
-                      refactored the codebase to leverage the latest Angular features, and
-                      standardized frontend practices across the team and company. A key challenge
-                      was implementing a backend queuing system to ensure booking availability at
-                      scale. The app launched for customers and scaled to handle hundreds of
-                      thousands of bookings, with page load speed improved by 140%.
-                    </p>
-                    <p class="mt-4">
-                      <strong>Tech used:</strong> Angular, TypeScript, JavaScript, Docker, AWS, GCP,
-                      Concourse CI, Java
+                    <div class="prose max-w-none">
+                      <p>
+                        Home Depot was launching their flagship Design Center store, and our scheduling system wasn't just a nice-to-have feature—it was the backbone of how they operate. This new retail concept needed customers to book design consultations in advance, and the entire business model depended on seamless appointment scheduling.
+                      </p>
+                      
+                      <h4 class="text-xl font-semibold mt-6 mb-3">The Challenge</h4>
+                      <p>
+                        What started as a proof of concept quickly needed to scale into a robust system supporting not just the flagship location, but eventually stores across the country. The original app was buckling under real-world usage, with page load times stretching over 15 seconds—completely unacceptable for a customer-facing booking system.
+                      </p>
+                      <p class="mt-3">
+                        We were essentially building two interconnected systems: a customer-facing booking platform where people could select their design preferences and schedule visits, and an internal management tool for Design Center employees to actually handle those appointments day-to-day.
+                      </p>
+
+                      <h4 class="text-xl font-semibold mt-6 mb-3">The Technical Transformation</h4>
+                      <p>
+                        I led the frontend development and took on the challenge of refactoring the entire codebase to leverage the latest Angular features. This wasn't just about updating dependencies—it was about transforming a fragile POC into a scalable, maintainable system that could handle hundreds of thousands of bookings.
+                      </p>
+                      <p class="mt-3">
+                        The backend queuing system was critical to solve the scaling challenge. Without it, we'd have booking conflicts, double-bookings, and a system that would crash under load. I worked closely with the backend team to ensure our frontend could handle the asynchronous nature of the booking process gracefully.
+                      </p>
+                      <p class="mt-3">
+                        Beyond just building features, I took on the broader challenge of standardizing frontend practices across the entire organization. This meant giving tech talks, organizing developer meetings to establish code standards, linting rules, and consistent patterns that every team could implement. It was about building sustainable development practices, not just a single app.
+                      </p>
+
+                      <h4 class="text-xl font-semibold mt-6 mb-3">The Impact</h4>
+                      <p>
+                        The transformation was dramatic: page load times dropped from over 15 seconds to milliseconds—a 140% improvement that fundamentally changed the user experience. The platform successfully launched and scaled to handle hundreds of thousands of bookings, supporting Home Depot's expansion of the Design Center concept to multiple locations.
+                      </p>
+                    </div>
+                    <p class="mt-6 text-sm text-gray-600 dark:text-gray-300">
+                      <strong>Tech used:</strong> Angular, TypeScript, JavaScript, Docker, AWS, GCP, Concourse CI, Java
                     </p>
                   </ng-container>
                   <ng-container *ngSwitchCase="'charterup'">
-                    <h3 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Charter Up</h3>
+                    <h3 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">CharterUp - Conversational Bus Booking Platform</h3>
                     <img
                       src="img/portfolio/charterup.png"
-                      alt="charterUP"
-                      class="h-full object-cover rounded mb-4"
+                      alt="CharterUp"
+                      class="h-full object-cover rounded-lg mb-6 shadow-md"
                     />
-                    <p>
-                      Customer-facing charter bus booking platform with a conversational interface
-                      and Google Maps-powered address verification. I led the project, delivering
-                      features end-to-end and helping shape the product’s direction.
-                    </p>
-                    <p class="mt-4">
-                      <strong>Tech used:</strong> Vue.js, JavaScript, TypeScript, AWS, Jenkins CI,
-                      Python
+                    <div class="prose max-w-none">
+                      <p>
+                        CharterUp wanted to revolutionize the charter bus booking experience by making it feel more human and approachable. We were inspired by the massive success of companies like Lemonade Insurance, who proved that conversational interfaces could transform traditionally painful transactional processes.
+                      </p>
+
+                      <h4 class="text-xl font-semibold mt-6 mb-3">The Product Vision</h4>
+                      <p>
+                        Instead of the typical form-heavy booking process, we created a friendly customer service persona that guided users through booking their charter bus. The conversational interface made the entire process feel easy and personal, like chatting with a helpful representative rather than filling out endless forms.
+                      </p>
+                      <p class="mt-3">
+                        I worked closely with a talented UX designer to flesh out not just the conversational booking flow, but also the dashboard and broader user functionality. We wanted to capture that friendly, guided experience throughout the entire platform.
+                      </p>
+
+                      <h4 class="text-xl font-semibold mt-6 mb-3">End-to-End Development</h4>
+                      <p>
+                        This project gave me the opportunity to work across the full stack. I handled the frontend implementation in Vue.js, but also coded Python endpoints to process and save booking details, then wired those endpoints into the UI for a seamless experience.
+                      </p>
+                      <p class="mt-3">
+                        The Google Maps integration was crucial for address verification—charter buses need accurate pickup and dropoff locations, and we couldn't afford address-related booking failures. I implemented the maps functionality to provide real-time address validation and suggestions.
+                      </p>
+                      <p class="mt-3">
+                        I also set up the CI/CD pipeline for the new application, ensuring we could deploy reliably and frequently as we iterated on the conversational experience.
+                      </p>
+
+                      <h4 class="text-xl font-semibold mt-6 mb-3">Shaping the Product</h4>
+                      <p>
+                        Beyond just implementing features, I helped shape the product's direction by working directly with stakeholders to refine the conversational flow and identify which parts of the booking process benefited most from the guided approach. This hands-on product involvement helped ensure we were building something users actually wanted, not just something that sounded good in theory.
+                      </p>
+                    </div>
+                    <p class="mt-6 text-sm text-gray-600 dark:text-gray-300">
+                      <strong>Tech used:</strong> Vue.js, JavaScript, TypeScript, AWS, Jenkins CI, Python
                     </p>
                   </ng-container>
                   <ng-container *ngSwitchCase="'testRunnerUi'">
-                    <h3 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">
-                      Test Runner UI
+                    <h3 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+                      Test Runner UI - Internal Testing Platform
                     </h3>
                     <img
                       src="img/portfolio/test-runner-ui.png"
                       alt="Test Runner UI"
-                      class="h-full object-cover rounded mb-4"
+                      class="h-full object-cover rounded-lg mb-6 shadow-md"
                     />
-                    <p>
-                      Internal tool for searching and visualizing integration test framework data,
-                      with advanced metadata-based search and interactive AG Grid visualizations. I
-                      architected, developed, and deployed the app independently, and contributed
-                      improvements back to the company’s component library based on this work.
-                    </p>
-                    <p class="mt-4">
-                      <strong>Tech used:</strong> Angular, TypeScript, JavaScript, AG Grid, NX,
-                      Docker, Nginx, Concourse CI
+                    <div class="prose max-w-none">
+                      <p>
+                        Our company's end-to-end testing process was a nightmare. To set up and view test scenarios for the entire backbone of our systems, developers had to make manual Postman requests, dig through specific bits of metadata, and trace through Splunk logs to find what they needed. It was time-consuming, error-prone, and frankly, a terrible developer experience.
+                      </p>
+
+                      <h4 class="text-xl font-semibold mt-6 mb-3">The Problem</h4>
+                      <p>
+                        The existing process meant that debugging test failures or understanding test coverage required deep tribal knowledge and a lot of patience. New team members struggled to navigate the system, and even experienced developers found it frustrating. For a company that depended on reliable testing of our core systems, this manual process was holding everyone back.
+                      </p>
+
+                      <h4 class="text-xl font-semibold mt-6 mb-3">The Solution</h4>
+                      <p>
+                        I architected and developed a comprehensive UI that streamlined this entire debugging process. The tool featured advanced metadata-based search capabilities and interactive AG Grid visualizations that made it easy to find exactly what you were looking for.
+                      </p>
+                      <p class="mt-3">
+                        Rather than piecing together information from multiple sources, developers could now search, filter, and visualize all their test data in one place. The interactive grids made it simple to drill down into specific test runs, compare results, and understand patterns in test behavior.
+                      </p>
+
+                      <h4 class="text-xl font-semibold mt-6 mb-3">Independent Development and Beyond</h4>
+                      <p>
+                        I took this project on independently—from initial architecture through deployment. Working solo meant I had to think carefully about maintainability and documentation, since I'd be the primary point of contact for questions and issues.
+                      </p>
+                      <p class="mt-3">
+                        One unexpected benefit was that this work led to improvements in our company-wide component library. As I built the UI, I identified enhancements to existing components and proposed architectural improvements. I completed this additional work and got involved in the external review process, contributing back to tools that benefited the entire engineering organization.
+                      </p>
+                      <p class="mt-3">
+                        The tool fundamentally changed how our teams approached testing and debugging, turning a frustrating manual process into a streamlined, visual experience.
+                      </p>
+                    </div>
+                    <p class="mt-6 text-sm text-gray-600 dark:text-gray-300">
+                      <strong>Tech used:</strong> Angular, TypeScript, JavaScript, AG Grid, NX, Docker, Nginx, Concourse CI
                     </p>
                   </ng-container>
                 </ng-container>
@@ -276,6 +345,10 @@ interface ExperienceTab {
   styles: [],
 })
 export class ExperienceComponent {
+  @ViewChild('modalEl') modalEl!: ElementRef;
+  @ViewChild('modalContent') modalContent!: ElementRef;
+  private clickListener!: (event: MouseEvent) => void;
+
   tabs: ExperienceTab[] = [
     {
       id: 'adp',
@@ -336,10 +409,29 @@ export class ExperienceComponent {
 
   protected showModal(caseStudy: string): void {
     this.openModal = caseStudy;
+
+    // Add click outside listener after a small delay to avoid immediate close
+    setTimeout(() => {
+      this.clickListener = (event: MouseEvent) => {
+        if (
+          this.openModal &&
+          this.modalContent &&
+          !this.modalContent.nativeElement.contains(event.target as Node)
+        ) {
+          this.hideModal();
+        }
+      };
+      document.addEventListener('click', this.clickListener);
+    });
   }
 
   protected hideModal(): void {
     this.openModal = null;
+
+    // Remove click listener when modal is closed
+    if (this.clickListener) {
+      document.removeEventListener('click', this.clickListener);
+    }
   }
 
   protected toggleAccordion(index: number): void {

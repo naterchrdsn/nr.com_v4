@@ -1,5 +1,6 @@
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { initFlowbite } from 'flowbite';
 import { IntroComponent } from './sections/intro.component';
 import { AboutComponent } from './sections/about.component';
@@ -8,8 +9,16 @@ import { ProjectsComponent } from './sections/projects.component';
 import { ContactComponent } from './sections/contact.component';
 import { NavigationComponent } from './navigation.component';
 
+// Constants for SEO
+const SITE_TITLE = 'Nate Richardson - Frontend Architect & Developer';
+const SITE_DESCRIPTION =
+  'Portfolio of Nate Richardson, a frontend-focused architect and developer with experience in building modern web applications.';
+const SITE_URL = 'https://naterichardson.com';
+const SITE_IMAGE = 'https://naterichardson.com/img/logo_cropped.png';
+
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [
     CommonModule,
     IntroComponent,
@@ -75,12 +84,39 @@ import { NavigationComponent } from './navigation.component';
   `,
 })
 export class AppComponent implements OnInit {
-  title = 'nr-portfolio';
+  private meta = inject(Meta);
+  private titleService = inject(Title);
+
+  title = 'nr-portfolio-v4';
+
   showToTop = false;
 
   ngOnInit(): void {
     initFlowbite();
+    this.setupSeo();
     window.addEventListener('scroll', this.onScroll, true);
+  }
+
+  private setupSeo(): void {
+    // Set document title
+    this.titleService.setTitle(SITE_TITLE);
+
+    // Basic meta tags
+    this.meta.updateTag({ name: 'description', content: SITE_DESCRIPTION });
+    this.meta.updateTag({ name: 'robots', content: 'index, follow' });
+
+    // Open Graph / Facebook
+    this.meta.updateTag({ property: 'og:type', content: 'website' });
+    this.meta.updateTag({ property: 'og:url', content: SITE_URL });
+    this.meta.updateTag({ property: 'og:title', content: SITE_TITLE });
+    this.meta.updateTag({ property: 'og:description', content: SITE_DESCRIPTION });
+    this.meta.updateTag({ property: 'og:image', content: SITE_IMAGE });
+
+    // Twitter
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({ name: 'twitter:title', content: SITE_TITLE });
+    this.meta.updateTag({ name: 'twitter:description', content: SITE_DESCRIPTION });
+    this.meta.updateTag({ name: 'twitter:image', content: SITE_IMAGE });
   }
 
   onScroll = (): void => {
