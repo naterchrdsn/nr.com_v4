@@ -221,39 +221,70 @@ interface ExperienceTab {
                     />
                     <div class="prose max-w-none">
                       <p>
-                        Home Depot was launching their flagship Design Center store, and our scheduling system wasn't just a nice-to-have feature—it was the backbone of how they operate. This new retail concept needed customers to book design consultations in advance, and the entire business model depended on seamless appointment scheduling.
+                        Home Depot was launching their flagship Design Center store, and our
+                        scheduling system wasn't just a nice-to-have feature—it was the backbone of
+                        how they operate. This new retail concept needed customers to book design
+                        consultations in advance, and the entire business model depended on seamless
+                        appointment scheduling.
                       </p>
-                      
+
                       <h4 class="text-xl font-semibold mt-6 mb-3">The Challenge</h4>
                       <p>
-                        What started as a proof of concept quickly needed to scale into a robust system supporting not just the flagship location, but eventually stores across the country. The original app was buckling under real-world usage, with page load times stretching over 15 seconds—completely unacceptable for a customer-facing booking system.
+                        What started as a proof of concept quickly needed to scale into a robust
+                        system supporting not just the flagship location, but eventually stores
+                        across the country. The original app was buckling under real-world usage,
+                        with page load times stretching over 15 seconds—completely unacceptable for
+                        a customer-facing booking system.
                       </p>
                       <p class="mt-3">
-                        We were essentially building two interconnected systems: a customer-facing booking platform where people could select their design preferences and schedule visits, and an internal management tool for Design Center employees to actually handle those appointments day-to-day.
+                        We were essentially building two interconnected systems: a customer-facing
+                        booking platform where people could select their design preferences and
+                        schedule visits, and an internal management tool for Design Center employees
+                        to actually handle those appointments day-to-day.
                       </p>
 
                       <h4 class="text-xl font-semibold mt-6 mb-3">The Technical Transformation</h4>
                       <p>
-                        I led the frontend development and took on the challenge of refactoring the entire codebase to leverage the latest Angular features. This wasn't just about updating dependencies—it was about transforming a fragile POC into a scalable, maintainable system that could handle hundreds of thousands of bookings.
+                        I led the frontend development and took on the challenge of refactoring the
+                        entire codebase to leverage the latest Angular features. This wasn't just
+                        about updating dependencies—it was about transforming a fragile POC into a
+                        scalable, maintainable system that could handle hundreds of thousands of
+                        bookings.
                       </p>
                       <p class="mt-3">
-                        The backend queuing system was critical to solve the scaling challenge. Without it, we'd have booking conflicts, double-bookings, and a system that would crash under load. I worked closely with the backend team to ensure our frontend could handle the asynchronous nature of the booking process gracefully.
+                        The backend queuing system was critical to solve the scaling challenge.
+                        Without it, we'd have booking conflicts, double-bookings, and a system that
+                        would crash under load. I worked closely with the backend team to ensure our
+                        frontend could handle the asynchronous nature of the booking process
+                        gracefully.
                       </p>
                       <p class="mt-3">
-                        Beyond just building features, I took on the broader challenge of standardizing frontend practices across the entire organization. This meant giving tech talks, organizing developer meetings to establish code standards, linting rules, and consistent patterns that every team could implement. It was about building sustainable development practices, not just a single app.
+                        Beyond just building features, I took on the broader challenge of
+                        standardizing frontend practices across the entire organization. This meant
+                        giving tech talks, organizing developer meetings to establish code
+                        standards, linting rules, and consistent patterns that every team could
+                        implement. It was about building sustainable development practices, not just
+                        a single app.
                       </p>
 
                       <h4 class="text-xl font-semibold mt-6 mb-3">The Impact</h4>
                       <p>
-                        The transformation was dramatic: page load times dropped from over 15 seconds to milliseconds—a 140% improvement that fundamentally changed the user experience. The platform successfully launched and scaled to handle hundreds of thousands of bookings, supporting Home Depot's expansion of the Design Center concept to multiple locations.
+                        The transformation was dramatic: page load times dropped from over 15
+                        seconds to milliseconds—a 140% improvement that fundamentally changed the
+                        user experience. The platform successfully launched and scaled to handle
+                        hundreds of thousands of bookings, supporting Home Depot's expansion of the
+                        Design Center concept to multiple locations.
                       </p>
                     </div>
                     <p class="mt-6 text-sm text-gray-600 dark:text-gray-300">
-                      <strong>Tech used:</strong> Angular, TypeScript, JavaScript, Docker, AWS, GCP, Concourse CI, Java
+                      <strong>Tech used:</strong> Angular, TypeScript, JavaScript, Docker, AWS, GCP,
+                      Concourse CI, Java
                     </p>
                   </ng-container>
                   <ng-container *ngSwitchCase="'charterup'">
-                    <h3 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">CharterUp - Conversational Bus Booking Platform</h3>
+                    <h3 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+                      CharterUp - Conversational Bus Booking Platform
+                    </h3>
                     <img
                       src="img/portfolio/charterup.png"
                       alt="CharterUp"
@@ -261,35 +292,59 @@ interface ExperienceTab {
                     />
                     <div class="prose max-w-none">
                       <p>
-                        CharterUp wanted to revolutionize the charter bus booking experience by making it feel more human and approachable. We were inspired by the massive success of companies like Lemonade Insurance, who proved that conversational interfaces could transform traditionally painful transactional processes.
+                        CharterUp wanted to revolutionize the charter bus booking experience by
+                        making it feel more human and approachable. We were inspired by the massive
+                        success of companies like Lemonade Insurance, who proved that conversational
+                        interfaces could transform traditionally painful transactional processes.
                       </p>
 
                       <h4 class="text-xl font-semibold mt-6 mb-3">The Product Vision</h4>
                       <p>
-                        Instead of the typical form-heavy booking process, we created a friendly customer service persona that guided users through booking their charter bus. The conversational interface made the entire process feel easy and personal, like chatting with a helpful representative rather than filling out endless forms.
+                        Instead of the typical form-heavy booking process, we created a friendly
+                        customer service persona that guided users through booking their charter
+                        bus. The conversational interface made the entire process feel easy and
+                        personal, like chatting with a helpful representative rather than filling
+                        out endless forms.
                       </p>
                       <p class="mt-3">
-                        I worked closely with a talented UX designer to flesh out not just the conversational booking flow, but also the dashboard and broader user functionality. We wanted to capture that friendly, guided experience throughout the entire platform.
+                        I worked closely with a talented UX designer to flesh out not just the
+                        conversational booking flow, but also the dashboard and broader user
+                        functionality. We wanted to capture that friendly, guided experience
+                        throughout the entire platform.
                       </p>
 
                       <h4 class="text-xl font-semibold mt-6 mb-3">End-to-End Development</h4>
                       <p>
-                        This project gave me the opportunity to work across the full stack. I handled the frontend implementation in Vue.js, but also coded Python endpoints to process and save booking details, then wired those endpoints into the UI for a seamless experience.
+                        This project gave me the opportunity to work across the full stack. I
+                        handled the frontend implementation in Vue.js, but also coded Python
+                        endpoints to process and save booking details, then wired those endpoints
+                        into the UI for a seamless experience.
                       </p>
                       <p class="mt-3">
-                        The Google Maps integration was crucial for address verification—charter buses need accurate pickup and dropoff locations, and we couldn't afford address-related booking failures. I implemented the maps functionality to provide real-time address validation and suggestions.
+                        The Google Maps integration was crucial for address verification—charter
+                        buses need accurate pickup and dropoff locations, and we couldn't afford
+                        address-related booking failures. I implemented the maps functionality to
+                        provide real-time address validation and suggestions.
                       </p>
                       <p class="mt-3">
-                        I also set up the CI/CD pipeline for the new application, ensuring we could deploy reliably and frequently as we iterated on the conversational experience.
+                        I also set up the CI/CD pipeline for the new application, ensuring we could
+                        deploy reliably and frequently as we iterated on the conversational
+                        experience.
                       </p>
 
                       <h4 class="text-xl font-semibold mt-6 mb-3">Shaping the Product</h4>
                       <p>
-                        Beyond just implementing features, I helped shape the product's direction by working directly with stakeholders to refine the conversational flow and identify which parts of the booking process benefited most from the guided approach. This hands-on product involvement helped ensure we were building something users actually wanted, not just something that sounded good in theory.
+                        Beyond just implementing features, I helped shape the product's direction by
+                        working directly with stakeholders to refine the conversational flow and
+                        identify which parts of the booking process benefited most from the guided
+                        approach. This hands-on product involvement helped ensure we were building
+                        something users actually wanted, not just something that sounded good in
+                        theory.
                       </p>
                     </div>
                     <p class="mt-6 text-sm text-gray-600 dark:text-gray-300">
-                      <strong>Tech used:</strong> Vue.js, JavaScript, TypeScript, AWS, Jenkins CI, Python
+                      <strong>Tech used:</strong> Vue.js, JavaScript, TypeScript, AWS, Jenkins CI,
+                      Python
                     </p>
                   </ng-container>
                   <ng-container *ngSwitchCase="'testRunnerUi'">
@@ -303,35 +358,62 @@ interface ExperienceTab {
                     />
                     <div class="prose max-w-none">
                       <p>
-                        Our company's end-to-end testing process was a nightmare. To set up and view test scenarios for the entire backbone of our systems, developers had to make manual Postman requests, dig through specific bits of metadata, and trace through Splunk logs to find what they needed. It was time-consuming, error-prone, and frankly, a terrible developer experience.
+                        Our company's end-to-end testing process was a nightmare. To set up and view
+                        test scenarios for the entire backbone of our systems, developers had to
+                        make manual Postman requests, dig through specific bits of metadata, and
+                        trace through Splunk logs to find what they needed. It was time-consuming,
+                        error-prone, and frankly, a terrible developer experience.
                       </p>
 
                       <h4 class="text-xl font-semibold mt-6 mb-3">The Problem</h4>
                       <p>
-                        The existing process meant that debugging test failures or understanding test coverage required deep tribal knowledge and a lot of patience. New team members struggled to navigate the system, and even experienced developers found it frustrating. For a company that depended on reliable testing of our core systems, this manual process was holding everyone back.
+                        The existing process meant that debugging test failures or understanding
+                        test coverage required deep tribal knowledge and a lot of patience. New team
+                        members struggled to navigate the system, and even experienced developers
+                        found it frustrating. For a company that depended on reliable testing of our
+                        core systems, this manual process was holding everyone back.
                       </p>
 
                       <h4 class="text-xl font-semibold mt-6 mb-3">The Solution</h4>
                       <p>
-                        I architected and developed a comprehensive UI that streamlined this entire debugging process. The tool featured advanced metadata-based search capabilities and interactive AG Grid visualizations that made it easy to find exactly what you were looking for.
+                        I architected and developed a comprehensive UI that streamlined this entire
+                        debugging process. The tool featured advanced metadata-based search
+                        capabilities and interactive AG Grid visualizations that made it easy to
+                        find exactly what you were looking for.
                       </p>
                       <p class="mt-3">
-                        Rather than piecing together information from multiple sources, developers could now search, filter, and visualize all their test data in one place. The interactive grids made it simple to drill down into specific test runs, compare results, and understand patterns in test behavior.
+                        Rather than piecing together information from multiple sources, developers
+                        could now search, filter, and visualize all their test data in one place.
+                        The interactive grids made it simple to drill down into specific test runs,
+                        compare results, and understand patterns in test behavior.
                       </p>
 
-                      <h4 class="text-xl font-semibold mt-6 mb-3">Independent Development and Beyond</h4>
+                      <h4 class="text-xl font-semibold mt-6 mb-3">
+                        Independent Development and Beyond
+                      </h4>
                       <p>
-                        I took this project on independently—from initial architecture through deployment. Working solo meant I had to think carefully about maintainability and documentation, since I'd be the primary point of contact for questions and issues.
+                        I took this project on independently—from initial architecture through
+                        deployment. Working solo meant I had to think carefully about
+                        maintainability and documentation, since I'd be the primary point of contact
+                        for questions and issues.
                       </p>
                       <p class="mt-3">
-                        One unexpected benefit was that this work led to improvements in our company-wide component library. As I built the UI, I identified enhancements to existing components and proposed architectural improvements. I completed this additional work and got involved in the external review process, contributing back to tools that benefited the entire engineering organization.
+                        One unexpected benefit was that this work led to improvements in our
+                        company-wide component library. As I built the UI, I identified enhancements
+                        to existing components and proposed architectural improvements. I completed
+                        this additional work and got involved in the external review process,
+                        contributing back to tools that benefited the entire engineering
+                        organization.
                       </p>
                       <p class="mt-3">
-                        The tool fundamentally changed how our teams approached testing and debugging, turning a frustrating manual process into a streamlined, visual experience.
+                        The tool fundamentally changed how our teams approached testing and
+                        debugging, turning a frustrating manual process into a streamlined, visual
+                        experience.
                       </p>
                     </div>
                     <p class="mt-6 text-sm text-gray-600 dark:text-gray-300">
-                      <strong>Tech used:</strong> Angular, TypeScript, JavaScript, AG Grid, NX, Docker, Nginx, Concourse CI
+                      <strong>Tech used:</strong> Angular, TypeScript, JavaScript, AG Grid, NX,
+                      Docker, Nginx, Concourse CI
                     </p>
                   </ng-container>
                 </ng-container>
@@ -351,10 +433,19 @@ export class ExperienceComponent {
 
   tabs: ExperienceTab[] = [
     {
+      id: 'deposco',
+      label: 'Deposco',
+      ariaLabelledBy: 'deposco-tab',
+      period: 'Dec. 2025 – Present',
+      description:
+        'Leading UI development initiatives and contributing to enterprise supply chain management solutions.',
+      tech: ['Angular', 'TypeScript', 'Modern Web Technologies'],
+    },
+    {
       id: 'adp',
       label: 'ADP, Inc.',
       ariaLabelledBy: 'adp-tab',
-      period: 'Feb. 2020 – Present',
+      period: 'Feb. 2020 – Nov. 2025',
       description:
         'Architected and led development of enterprise applications, mentored team members, and contributed to internal tools and design systems.',
       tech: [

@@ -25,12 +25,13 @@ import { Component } from '@angular/core';
           <p class="leading-relaxed">
             I own and operate Nacho Labs, a boutique web solutions company specializing in
             development, hosting, and webmastering services in the Atlanta area. I also work
-            full-time as a Lead Application Developer at ADP. When I’m not coding, I’m usually
-            tinkering—whether with my home lab or a grill full of something delicious.
+            full-time as a Senior UI Engineer at Deposco, where I contribute to enterprise supply
+            chain management solutions. When I’m not coding, I’m usually tinkering—whether with my
+            home lab or a grill full of something delicious.
           </p>
           <p class="">
-            I enjoy video games, spending time with my dog and three cats, and generally finding new
-            things to make, break, and improve.
+            I enjoy video games, spending time with my two dogs and three cats, and generally
+            finding new things to make, break, and improve.
           </p>
           <p class="">
             I believe great software (like great food) should be crafted with care, built to last,
