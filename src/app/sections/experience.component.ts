@@ -438,7 +438,7 @@ export class ExperienceComponent {
       ariaLabelledBy: 'deposco-tab',
       period: 'Dec. 2025 – Present',
       description:
-        'Leading UI development initiatives and contributing to enterprise supply chain management solutions.',
+        'Part of the product team helping to standardize and stabilize UI for enterprise supply chain management solutions.',
       tech: ['Angular', 'TypeScript', 'Modern Web Technologies'],
     },
     {
