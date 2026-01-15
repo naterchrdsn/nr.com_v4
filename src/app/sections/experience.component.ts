@@ -438,7 +438,7 @@ export class ExperienceComponent {
       ariaLabelledBy: 'deposco-tab',
       period: 'Dec. 2025 – Present',
       description:
-        'Collaborated on the product team to bring consistency and stability to UI systems supporting enterprise supply chain management.',
+        'Collaborate on the product team to bring consistency and stability to UI systems supporting enterprise supply chain management.',
       tech: ['Angular', 'TypeScript', 'Modern Web Technologies'],
     },
     {
